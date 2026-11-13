@@ -263,7 +263,39 @@ textarea {
   color: var(--text);
 }
 
+/* --- Theme toggle --- */
+#theme-toggle {
+  border: 0;
+  background: none;
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transition: background .2s, transform .3s;
+}
 
+#theme-toggle:hover {
+  background: var(--card);
+  transform: rotate(20deg);
+}
+
+/* Dark mode: show the moon */
+.icon-sun {
+  display: none;
+}
+
+/* Light mode: show the sun */
+[data-theme="light"] .icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .icon-sun {
+  display: inline;
+}
 /* ==========================================================
    5. HERO
    ========================================================== */
