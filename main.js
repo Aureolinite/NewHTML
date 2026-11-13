@@ -29,3 +29,20 @@ document.getElementById("contact-form").addEventListener("submit", event => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const themeToggle = document.getElementById("theme-toggle");
+
+const savedTheme = localStorage.getItem("theme") || "dark";
+
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+themeToggle.addEventListener("click", () => {
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+
+    localStorage.setItem("theme", newTheme);
+});
